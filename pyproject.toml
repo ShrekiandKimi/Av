@@ -1,0 +1,20 @@
+[tool.black]
+line-length = 120
+target-version = ['py38', 'py39', 'py310', 'py311']
+include = '\.pyi?$'
+exclude = '''
+/(
+    venv
+    | __pycache__
+    | .git
+    | allure-results
+    | test-results
+    | .pytest_cache
+)/
+'''
+
+[tool.pytest.ini_options]
+testpaths = ["tests/ui"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
